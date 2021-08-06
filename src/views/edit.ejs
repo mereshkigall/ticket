@@ -1,0 +1,43 @@
+<%- include ('partials/_header') -%>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-5 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<form action="/edit/<%= task._id %>" method="post">
+							<div class="form-group">
+								Nombre:
+								<input type="text" name="nombre" placeholder="Tu nombre" class="form-control" value="<%= task.nombre %>">
+								Local:
+								<input type="text" name="local" placeholder="Local" class="form-control" value="<%= task.local %>">
+								Tipo de problema:
+								<input type="text" name="radio" placeholder="radio" class="form-control" value="<%= task.radio %>">
+
+								Descripcion:
+								
+								<textarea name="descripcion" cols="80" class="form-control" placeholder="Describa el problema">
+<%= task.descripcion%></textarea>
+	
+									<input type="text" name="fecha" placeholder="Fecha" class="form-control" value="<%= task.fecha %>">
+
+								<input type="text" name="comentario" placeholder="Comentarios" class="form-control" value="<%= task.comentario %>">
+
+
+							</div>
+							<button type="submit" class="btn btn-primary w-100">Editar</button>
+						</form>
+						
+					</div>
+					
+				</div>
+				
+		</div>
+
+	</div>
+	
+</div>
+
+
+
+<%- include ('partials/_footer') -%>

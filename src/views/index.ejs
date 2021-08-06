@@ -1,0 +1,84 @@
+
+<%- include ('partials/_header') -%>
+
+
+	<div class="container">
+		<div class="row">
+			
+			<!-- FORM -->
+			<div class="col-md-5">
+				<div class="card">
+					<div class="card-body">
+						<form action="/add" method="POST">
+							<div class="form-group">
+
+								<input type="text" name="nombre" placeholder="Tu nombre" class="form-control">
+								<br>
+								<input type="text" name="local" placeholder="Local" class="form-control">
+								<br>
+								<label>Fecha y hora:</label>
+								<br>
+
+
+<script type="text/javascript"> 
+  // document.getElementById("fechaa").setAttribute('value', 'asd');
+</script>
+
+								<script type="text/javascript">
+										function startTime(){
+												today=new Date();
+												h=today.getHours();
+												m=today.getMinutes();
+												s=today.getSeconds();
+												m=checkTime(m);
+												s=checkTime(s);
+												document.getElementById('fechaa').innerHTML=h+":"+m+":"+s;
+												//document.getElementById("fechaa").setAttribute('value', 'asd');
+												t=setTimeout('startTime()',500);}
+										function checkTime(i)
+												{if (i<10) {i="0" + i;}return i;}
+												window.onload=function(){startTime();}
+
+								</script>
+
+								<div id="fechaa" style="font-size:20px;"></div>
+
+								<br>
+								<label>Selecciona el tipo de problema:</label>
+								<br>
+								<input type="radio" id="impresoras" name="radio" value="impresoras" checked>
+  							<label for="impresoras">Impresoras</label>
+
+  							<input type="radio" id="usuarios" name="radio" value="usuarios">
+  							<label for="usuarios">Usuarios</label>
+
+  							<input type="radio" id="peticion" name="radio" value="peticion">
+  							<label for="peticion">Peticion</label>
+  							<br>
+
+  							<br>
+								
+								<textarea name="descripcion" cols="80" class="form-control" placeholder="Describe el problema"></textarea>
+								<br>
+
+							</div>
+							<button type="submit" class="btn btn-primary w-100">Enviar</button>
+							<a href="panel">Panel Administrador de tickets</a>
+
+						</form>
+
+					</div>
+					
+				</div>
+				
+			</div>
+
+			<!-- LIST -->
+			
+			
+		</div>
+
+	</div>
+
+
+<%- include ('partials/_footer.ejs') -%>

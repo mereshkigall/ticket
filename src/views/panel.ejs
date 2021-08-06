@@ -1,0 +1,42 @@
+<%- include ('partials/_header') -%>
+
+
+<!-- LIST -->
+<!--			<div class="col-md-7"> -->
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Nº</th>
+							<th>Nombre</th>
+							<th>Local</th>
+							<th>Tipo de problema</th>
+							<th>Descripcion</th>
+							<th>Fecha</th>
+							<th>Comentarios</th>
+							<th>Operacion</th>
+
+						</tr>
+					</thead>					
+					<tbody>
+          <% for(var i=0; i < tasks.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= tasks[i].nombre %></strong></td>
+              <td><%= tasks[i].local %></td>
+              <td><%= tasks[i].radio %></td>
+              <td><%= tasks[i].descripcion %></td>
+              <td><%= tasks[i].fecha %></td>
+              <td><%= tasks[i].comentario %></td>
+
+              <td>
+                <a class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>" href="/turn/<%= tasks[i]._id %>">Finalizar</a>
+                <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">Borrar</a>
+                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">Editar</a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+				</table>
+<!--			</div>  -->
+
+<%- include ('partials/_footer') -%>
